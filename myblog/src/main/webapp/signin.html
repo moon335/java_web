@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	
+	header {
+		background-color: #CBCBCB;
+		text-align: center;
+	}
+	
+	section {
+		background-color: #CBCBCB;
+	}
+	
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	fieldset {
+		flex: 2;
+		padding: 10px;
+		width: 45%;
+		margin: 10px;
+	}
+	
+	button {
+		flex: 1;
+		width: 45%;
+		margin-bottom: 10px;
+	}
+	
+	li {
+		list-style: none;
+		display: flex;
+		padding: 10px;
+	}
+	
+	label {
+		flex: 1;
+	}
+	
+	input {
+		flex: 1;
+	}
+	
+</style>
+</head>
+<body>
+	<header>
+		<h2>로그인page</h2>
+	</header>
+	<!--
+	signin.html 요청을 하면 화면을 그리는 담당
+	1.요청 
+	form 태그중 method 속성, action 속성에 대해 알아보고
+	name 값과 password 값을 보낼 수 있는 화면을 구성하시오.
+	
+	2.  버튼을 누르면 연산 처리를 할 Servlet 객체를 만들어 주세요.
+		method 방식 : post
+		서버 콘솔창에 넘겨 받은 데이터를 출력 하시오.
+	 -->
+	 <!-- 
+	 	method -> 사용자가 입력한 내용들을 서버 쪽 프로그램에 어떻게 넘겨줄지 지정
+	 	action -> form 태그 안에 내용들을 처리해 줄 서버 상의 프로그램 지정 
+	 -->
+	 <section>
+		 <form method="post" action="/myblog/usercontroller">
+		 	<fieldset>
+		 		<ul>
+		 			<li>
+		 				<label>name: </label>
+		 				<input type="text" name="name">
+		 			</li>
+		 			<li>
+		 				<label>password: </label>
+		 				<input type="password" name="password">
+		  			</li>
+		 		</ul>
+		 	</fieldset>
+		 	<button type="submit">로그인</button>
+		 </form>
+	 </section>
+</body>
+</html>
