@@ -30,6 +30,7 @@ public class LoginProc extends HttpServlet {
 		String hobby = request.getParameter("hobby");
 		String[] likes = request.getParameterValues("like"); // 배열처리(다중선택)
 		
+		
 		System.out.println("email: " + email);
 		System.out.println("password: " + password);
 		System.out.println("isRemember: " + isRemember);
