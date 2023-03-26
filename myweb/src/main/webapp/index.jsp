@@ -13,6 +13,10 @@
 		padding: 0;
 	}
 	
+	body {
+		height: 100vh;
+	}
+	
 	header {
 		display: flex;
 		flex-direction: column;
@@ -70,6 +74,7 @@
 	#button {
 		border: none;
 		margin-right: 0;
+		cursor: pointer;
 	}
 	
 	.nav-depth1 > li {
@@ -130,12 +135,19 @@
 		transition-delay: 1s;
 	}
 	
+	section {
+		height: 75%;
+	}
+	
 	.bullets {
+		height: 75%;
 		position: absolute;
-		left: 50%;
 		transform: translateX(-50%);
-		bottom: 20px;
 		z-index: 2;
+		
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
 	}
 	
 	.bullets label {
@@ -147,23 +159,23 @@
 		cursor: pointer;
 	}
 	
-	.slider input[typeradio]:nth-child(1):checked~.bullets>label:nthchild(1){
+	.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
 		background-color: #fff;
 	}
 	
-	.slider input[typeradio]:nth-child(2):checked~.bullets>label:nthchild(2){
+	.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
 		background-color: #fff;
 	}
 	
-	.slider input[typeradio]:nth-child(3):checked~.bullets>label:nthchild(3){
+	.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
 		background-color: #fff;
 	}
 	
-	.slider input[typeradio]:nth-child(4):checked~.bullets>label:nthchild(1){
+	.slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
 		background-color: #fff;
 	}
 	
-	.slider input[typeradio]:nth-child(5):checked~.bullets>label:nthchild(1){
+	.slider input[type=radio]:nth-child(5):checked~.bullets>label:nth-child(5){
 		background-color: #fff;
 	}
 	
@@ -198,14 +210,14 @@
 	<header>
 		<div id="top">
 			<div id="logo">
-				<img alt="대충 로고 파일" src="images/cgv로고.png">
+				<a href="index.jsp"><img alt="대충 로고 파일" src="images/cgv로고.png"></a>
 			</div>
 			<div id="menu">
 				<img alt="카드광고" src="images/카드광고.png">
-				<img alt="로그인" src="images/로그인.png">
-				<img alt="회원가입" src="images/회원가입.png">
-				<img alt="내정보" src="images/내정보.png">
-				<img alt="고객센터" src="images/고객센터.png">
+				<a href="login.jsp"><img alt="로그인" src="images/로그인.png"></a>
+				<a href="signUp.jsp"><img alt="회원가입" src="images/회원가입.png"></a>
+				<a href="myInfo.jsp"><img alt="내정보" src="images/내정보.png"></a>
+				<a href="http://www.cgv.co.kr/support/default.aspx"><img alt="고객센터" src="images/고객센터.png"></a>
 			</div>
 		</div>
 		<div id="index">
@@ -306,7 +318,6 @@
 		</div>
 	</section>
 	<footer>
-		
 	</footer>
 </body>
 </html>
