@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>CGV 따라하기</title>
+<%@ page errorPage="errorPage.jsp" %>
+<jsp:include page="/layout/header.jsp"/>
 <style type="text/css">
-	
 	* {
 		box-sizing: border-box;
 		margin: 0;
@@ -17,99 +13,14 @@
 		height: 100vh;
 	}
 	
-	header {
-		display: flex;
-		flex-direction: column;
-	}
-	
-	#top {
-		display: flex;
-	}
-	
-	#logo {
-		flex: 3.2;
-	}
-	
-	#menu {
-		flex: 1;
-	}
-	
-	#index {
-		display: flex;
-	}
-	
 	li {
 		list-style: none;
 	}
-	
-	a {
-		text-decoration: none;
-		color: #000;
-	}
-	
-	.nav-depth1 {
-		display: flex;
-		overflow: hidden;
-		flex: 6;
-	}
-	
-	#searchbox {
-		flex: 1;
-		
-	}
-	
-	#searchform {
-		margin-right: 50px;
-		border-left: 1px solid #ccc;
-		border-right: 1px solid #ccc;
-		padding: 5px;
-		display: flex;
-	}
-	
-	#search {
-		border: none;
-		margin-right: 5px;
-	}
-	
-	#button {
-		border: none;
-		margin-right: 0;
-		cursor: pointer;
-	}
-	
-	.nav-depth1 > li {
-		width: 10%;
-		text-align: center;
-		line-height: 40px;
-	}
-	
-	.nav-depth2 > li {
-		line-height: 50px;
-	}
-	
-	.nav-depth2 {
-		height: 0;
-		overflow: hidden;
-	}
-	
-	.nav-depth1 > li:hover {
-		background-color: #000;
-		transition-duration: 0.5s;
-	}
-	
-	.nav-depth1 > li:hover a {
-		color: white;
-		transition-duration: 0.5s;
-	}
-	
-	.nav-depth1 > li:hover .nav-depth2 {
-		height: 450px;
-		transition-duration: 1s;
-	}
-	
+
 	section {
 		display: flex;
 		justify-content: center;
+		margin-bottom: 40px;
 	}
 	
 	.slider {
@@ -203,97 +114,7 @@
 		transition: 0.5s;
 		z-index: 1;
 	}
-	
 </style>
-</head>
-<body>
-	<header>
-		<div id="top">
-			<div id="logo">
-				<a href="index.jsp"><img alt="대충 로고 파일" src="images/cgv로고.png"></a>
-			</div>
-			<div id="menu">
-				<img alt="카드광고" src="images/카드광고.png">
-				<a href="login.jsp"><img alt="로그인" src="images/로그인.png"></a>
-				<a href="signUp.jsp"><img alt="회원가입" src="images/회원가입.png"></a>
-				<a href="myInfo.jsp"><img alt="내정보" src="images/내정보.png"></a>
-				<a href="http://www.cgv.co.kr/support/default.aspx"><img alt="고객센터" src="images/고객센터.png"></a>
-			</div>
-		</div>
-		<div id="index">
-			<ul class="nav-depth1">
-                <li>
-                    <a href="#">영화</a>
-                    <ul class="nav-depth2">
-                        <li><a href="#"><strong>영화</strong></a></li>
-                        <li><a href="#">무비차트</a></li>
-                        <li><a href="#">아트하우스</a></li>
-                        <li><a href="#">ICECON</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">극장</a>
-                    <ul class="nav-depth2">
-                        <li><a href="#"><strong>극장</strong></a></li>
-                        <li><a href="#">CGV극장</a></li>
-                        <li><a href="#">특별관</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">예매</a>
-                    <ul class="nav-depth2">
-                        <li><a href="#"><strong>예매</strong></a></li>
-                        <li><a href="#">빠른예매</a></li>
-                        <li><a href="#">상영스케줄</a></li>
-                        <li><a href="#">English Ticketing</a></li>
-                        <li><a href="#">English Schedule</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">스토어</a>
-                    <ul class="nav-depth2">
-                        <li><a href="#"><strong>스토어</strong></a></li>
-                        <li><a href="#">패키지</a></li>
-                        <li><a href="#">영화관람권</a></li>
-                        <li><a href="#">기프트카드</a></li>
-                        <li><a href="#">콤보</a></li>
-                        <li><a href="#">팝콘</a></li>
-                        <li><a href="#">스낵</a></li>
-                        <li><a href="#">플레이존</a></li>
-                        <li><a href="#">씨네샵 ></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">이벤트</a>
-                    <ul class="nav-depth2">
-                        <li><a href="#"><strong>이벤트</strong></a></li>
-                        <li><a href="#">SPECIAL</a></li>
-                        <li><a href="#">영화/예매</a></li>
-                        <li><a href="#">멤버십/CLUB</a></li>
-                        <li><a href="#">CGV극장별</a></li>
-                        <li><a href="#">제휴할인</a></li>
-                        <li><a href="#">당첨자 발표</a></li>
-                        <li><a href="#">종료된 이벤트</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">혜택</a>
-                    <ul class="nav-depth2">
-                        <li><a href="#"><strong>혜택</strong></a></li>
-                        <li><a href="#">CGV 할인정보</a></li>
-                        <li><a href="#">CLUB서비스</a></li>
-                        <li><a href="#">VIP 라운지</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div id="searchbox">
-	            <form action="" method="post" id="searchform">
-	            	<input type="text" id="search" name="search">
-	            	<button id="button"><img src="images/돋보기.png"></button>
-	            </form>
-            </div>
-		</div>
-	</header>
 	<section>
 		<div class="slider">
 			<input type="radio" name="slide" id="slide1" checked>
@@ -317,7 +138,4 @@
 			</div>
 		</div>
 	</section>
-	<footer>
-	</footer>
-</body>
-</html>
+<jsp:include page="/layout/footer.jsp"/>
