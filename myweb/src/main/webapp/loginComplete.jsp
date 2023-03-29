@@ -3,11 +3,11 @@
 <%@ page errorPage="errorPage.jsp" %>
 <%
 	String username = (String)session.getAttribute("userId");
-	if(username != null) {
-		response.sendRedirect("logincomplete.jsp");
+	if(username == null) {
+		response.sendRedirect("index.jsp");
 	}
 %>
-<jsp:include page="/layout/header.jsp"/>
+<jsp:include page="/layout/header2.jsp"/>
 <style type="text/css">
 	* {
 		box-sizing: border-box;

@@ -1,5 +1,18 @@
+<%@page import="com.cgv.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	if(request.getAttribute("userDto") != null){
+		UserDTO userDto = (UserDTO)request.getAttribute("userDto");
+		if(userDto.getUserId() != null) {
+			session.setAttribute("userId", userDto.getUserId());
+			session.setAttribute("password", userDto.getPassword());
+			response.sendRedirect("loginComplete.jsp");
+		} else {
+			out.println("<script>alert('아이디와 비밀번호를 확인해주세요.'); location.href='login.jsp' </script>");
+		}
+	}
+%>
 <jsp:include page="/layout/header.jsp"/>
 <style type="text/css">
 	* {
@@ -71,15 +84,17 @@
 			<div class="sectionDiv">
 				<p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
 			</div>
-			<div class="sectionDiv">
-				<input type="text" id="username" name="username">
-			</div>
-			<div class="sectionDiv">
-				<input type="password" id="password" name="password">
-			</div>
-			<div class="sectionDiv">
-				<input type="submit" value="로그인" id="loginbutton">
-			</div>
+			<form action="/myweb/userController?action=login" method="post">
+				<div class="sectionDiv">
+					<input type="text" id="username" name="username" required="required">
+				</div>
+				<div class="sectionDiv">
+					<input type="password" id="password" name="password" required="required">
+				</div>
+				<div class="sectionDiv">
+					<input type="submit" value="로그인" id="loginbutton">
+				</div>
+			</form>
 		</div>
 	</section>
 <jsp:include page="/layout/footer.jsp"/>
