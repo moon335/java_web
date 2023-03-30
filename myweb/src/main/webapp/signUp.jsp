@@ -1,39 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<jsp:include page="/layout/loginNsignUpHeader.jsp"/>
 <style type="text/css">
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
-	
-	header {
-		display: flex;
-		background-color: #222222;
-	}
-	
-	#logo-img {
-		width: 100vh;
-		display: flex;
-		justify-content: flex-start;
-	}
-	
-	#logo-img2 {
-		width: 100vh;
-		display: flex;
-		justify-content: flex-end;
-	}
-	
+
 	section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
+	}
+	
+	#section-head {
+		font-size: 30px;
+		font-weight: bolder;
+		margin-bottom: 30px;
+	}
+	
+	#section-comment {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 30px;
 	}
 	
 	table {
@@ -50,7 +36,7 @@
 	.line-td {
 		border-right: 1px solid #ccc;
 		width: 200px;
-		background-color: #D5DDF7;
+		background-color: #F8F8F8;
 	}
 	
 	form {
@@ -63,22 +49,47 @@
 		width: 200px;
 		padding: 10px;
 	}
+	
+	#information-use {
+		background-color: #F8F8F8;
+		padding: 50px;
+		margin-bottom: 10px;
+	}
+	
+	#information-use li {
+		list-style-position: inside;
+	}
+	
+	#buttons {
+		display: flex;
+	}
+	
+	input[type=submit] {
+		width: 100px;
+		padding: 10px;
+		border: none;
+		background-color: #000;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	
+	#buttons button {
+		width: 100px;
+		padding: 10px;
+		margin-right: 20px;
+		border: 2px solid #000;
+		border-radius: 5px;
+		background-color: #fff;
+		cursor: pointer;
+	}
+	
 </style>
-</head>
-<body>
-	<header>
-		<div id="logo-img">
-			<img alt="membership" src="images/membership.png">
-		</div>
-		<div id="logo-img2">
-			<img alt="cgv" src="images/cgv.png">
-		</div>
-	</header>
 	<section>
-		<div>
+		<div id="section-head">
 			<h1>회원가입</h1>
 		</div>
-		<div>
+		<div id="section-comment">
 			<p>라이프스타일 멤버십 CJ ONE! 외식, 쇼핑, 엔터테인먼트 서비스를 한 장의 카드로 즐기세요~</p>
 		</div>
 		<form action="/myweb/userController?action=signUp" method="post">
@@ -115,7 +126,17 @@
 					</tr>
 				</table>
 			</figure>
-			<input type="submit" value="회원가입">
+			<div id="information-use">
+				<h3>이용안내</h3>
+				<ul>
+					<li>CJ ONE 회원가입 후에도 각 제휴 브랜드 웹 사이트에서 통합 아이디를 사용하여 로그인 하시려면, 각 브랜드 웹 사이트의 이용약관에 동의를 거친 후에 이용 가능합니다.</li>
+					<li>개인정보 수집 및 활용 동의 (선택)에 거부한 회원님은 마케팅 정보 수신을 받으실 수 없습니다.</li>
+				</ul>
+			</div>
+			<div id="buttons">
+				<button type="button" onclick="location.href='index.jsp'">취소</button>
+				<input type="submit" value="회원가입">
+			</div>
 		</form>
 	</section>
 <jsp:include page="/layout/footer.jsp"/>

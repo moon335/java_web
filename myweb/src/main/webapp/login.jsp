@@ -55,7 +55,7 @@
 		padding: 10px 80px;
 		border: none;
 		border-radius: 5px;
-		background-color: #EF3752;
+		background-color: #FB4357;
 		color: #fff;
 		cursor: pointer;
 	}
