@@ -120,6 +120,7 @@
 		transition: 0.5s;
 		z-index: 1;
 	}
+	
 </style>
 	<section>
 		<div class="slider">
